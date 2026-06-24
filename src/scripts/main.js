@@ -358,3 +358,60 @@ const people = [
 console.log(people); // you can remove it
 
 // write your code here
+// import people from './people.json';
+
+// Функція для обчислення століття
+function getCentury(year) {
+  return Math.ceil(year / 100);
+}
+
+// Отримуємо таблицю з класом dashboard
+const table = document.querySelector('.dashboard');
+
+// Проходимо по кожній людині з масиву people
+people.forEach((person) => {
+  // Обчислюємо вік
+  const age = person.died - person.born;
+
+  // Обчислюємо століття (на основі року смерті)
+  const century = getCentury(person.died);
+
+  // Створюємо новий рядок таблиці
+  const row = document.createElement('tr');
+
+  // Створюємо комірки для кожного поля
+  const nameCell = document.createElement('td');
+
+  nameCell.textContent = person.name;
+
+  const genderCell = document.createElement('td');
+
+  genderCell.textContent = person.gender;
+
+  const bornCell = document.createElement('td');
+
+  bornCell.textContent = person.born;
+
+  const diedCell = document.createElement('td');
+
+  diedCell.textContent = person.died;
+
+  const ageCell = document.createElement('td');
+
+  ageCell.textContent = age;
+
+  const centuryCell = document.createElement('td');
+
+  centuryCell.textContent = century;
+
+  // Додаємо всі комірки до рядка
+  row.appendChild(nameCell);
+  row.appendChild(genderCell);
+  row.appendChild(bornCell);
+  row.appendChild(diedCell);
+  row.appendChild(ageCell);
+  row.appendChild(centuryCell);
+
+  // Додаємо рядок до таблиці
+  table.appendChild(row);
+});
