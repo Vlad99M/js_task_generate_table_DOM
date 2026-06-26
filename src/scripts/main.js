@@ -365,17 +365,12 @@ function getCentury(year) {
 
 const table = document.querySelector('.dashboard');
 
-
 people.forEach((person) => {
-
   const age = person.died - person.born;
-
 
   const century = getCentury(person.died);
 
-
   const row = document.createElement('tr');
-
 
   const nameCell = document.createElement('td');
 
@@ -383,7 +378,7 @@ people.forEach((person) => {
 
   const genderCell = document.createElement('td');
 
-  genderCell.textContent = person.gender;
+  genderCell.textContent = person.sex;
 
   const bornCell = document.createElement('td');
 
@@ -400,7 +395,6 @@ people.forEach((person) => {
   const centuryCell = document.createElement('td');
 
   centuryCell.textContent = century;
-
 
   row.appendChild(nameCell);
   row.appendChild(genderCell);
