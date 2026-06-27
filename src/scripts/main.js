@@ -365,43 +365,45 @@ function getCentury(year) {
 
 const table = document.querySelector('.dashboard');
 
-people.forEach((person) => {
-  const age = person.died - person.born;
+if (table) {
+  people.forEach((person) => {
+    const age = person.died - person.born;
 
-  const century = getCentury(person.died);
+    const century = getCentury(person.died);
 
-  const row = document.createElement('tr');
+    const row = document.createElement('tr');
 
-  const nameCell = document.createElement('td');
+    const nameCell = document.createElement('td');
 
-  nameCell.textContent = person.name;
+    nameCell.textContent = person.name;
 
-  const genderCell = document.createElement('td');
+    const genderCell = document.createElement('td');
 
-  genderCell.textContent = person.sex;
+    genderCell.textContent = person.sex;
 
-  const bornCell = document.createElement('td');
+    const bornCell = document.createElement('td');
 
-  bornCell.textContent = person.born;
+    bornCell.textContent = person.born;
 
-  const diedCell = document.createElement('td');
+    const diedCell = document.createElement('td');
 
-  diedCell.textContent = person.died;
+    diedCell.textContent = person.died;
 
-  const ageCell = document.createElement('td');
+    const ageCell = document.createElement('td');
 
-  ageCell.textContent = age;
+    ageCell.textContent = age;
 
-  const centuryCell = document.createElement('td');
+    const centuryCell = document.createElement('td');
 
-  centuryCell.textContent = century;
+    centuryCell.textContent = century;
 
-  row.appendChild(nameCell);
-  row.appendChild(genderCell);
-  row.appendChild(bornCell);
-  row.appendChild(diedCell);
-  row.appendChild(ageCell);
-  row.appendChild(centuryCell);
+    row.appendChild(nameCell);
+    row.appendChild(genderCell);
+    row.appendChild(bornCell);
+    row.appendChild(diedCell);
+    row.appendChild(ageCell);
+    row.appendChild(centuryCell);
 
-  table.appendChild(row);
-});
+    table.appendChild(row);
+  });
+}
